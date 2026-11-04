@@ -1,0 +1,13 @@
+---
+title: "About"
+---
+
+## About the Map
+
+The map on the home page displays the **population change rate (%)** across census tracts in **Manatee County, Florida** between the **2016–2020** and **2019–2023** U.S. Census Bureau 5-Year American Community Survey (ACS) estimates (table `B01003_001`).
+
+### Key Patterns in the Graph
+
+- **Fastest Growth in Eastern & Suburban Tracts:** The brightest yellow/orange tracts—primarily inland and eastern areas such as Lakewood Ranch and Parrish—experienced rapid population growth, with the fastest-growing tract increasing by over **83%**.
+- **Countywide Trend:** Across all populated census tracts in Manatee County, the median tract grew by about **3.0%** (with an average tract change of **+4.5%**) over this three-year window.
+- **Stable or Declining Coastal/Urban Core Tracts:** Darker purple/blue tracts along the older coastal and central urban areas show slower growth or population declines, reflecting already built-out neighborhoods and shifts toward seasonal or vacation housing.

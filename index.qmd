@@ -1,0 +1,31 @@
+---
+title: "Population Changes Over Time"
+---
+
+This is the population change rate within Manatee County, FL.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(sf)
+
+manatee_tracts <- read_rds("manatee_tracts.rds") |>
+  filter(!is.na(pct_change))
+
+ggplot(manatee_tracts) +
+  geom_sf(aes(fill = pct_change), color = "white", linewidth = 0.2) +
+  scale_fill_viridis_c(
+    option = "plasma",
+    labels = \(x) paste0(round(x), "%"),
+    name = "Change Rate\n(2020 to 2023)"
+  ) +
+  labs(
+    title = "Population Change Rate by Census Tract in Manatee County, FL",
+    subtitle = "Percent change in total population from 2020 to 2023 (5-Year ACS)",
+    caption = "Source: U.S. Census Bureau, American Community Survey (B01003_001)"
+  ) +
+  theme_void()
+```
