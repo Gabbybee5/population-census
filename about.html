@@ -114,8 +114,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-the-map" id="toc-about-the-map" class="nav-link active" data-scroll-target="#about-the-map">About the Map</a>
+  <ul class="collapse">
+  <li><a href="#key-patterns-in-the-graph" id="toc-key-patterns-in-the-graph" class="nav-link" data-scroll-target="#key-patterns-in-the-graph">Key Patterns in the Graph</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -139,9 +148,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>About this site</p>
+<section id="about-the-map" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-map">About the Map</h2>
+<p>The map on the home page displays the <strong>population change rate (%)</strong> across census tracts in <strong>Manatee County, Florida</strong> between the <strong>2016–2020</strong> and <strong>2019–2023</strong> U.S. Census Bureau 5-Year American Community Survey (ACS) estimates (table <code>B01003_001</code>).</p>
+<section id="key-patterns-in-the-graph" class="level3">
+<h3 class="anchored" data-anchor-id="key-patterns-in-the-graph">Key Patterns in the Graph</h3>
+<ul>
+<li><strong>Fastest Growth in Eastern &amp; Suburban Tracts:</strong> The brightest yellow/orange tracts—primarily inland and eastern areas such as Lakewood Ranch and Parrish—experienced rapid population growth, with the fastest-growing tract increasing by over <strong>83%</strong>.</li>
+<li><strong>Countywide Trend:</strong> Across all populated census tracts in Manatee County, the median tract grew by about <strong>3.0%</strong> (with an average tract change of <strong>+4.5%</strong>) over this three-year window.</li>
+<li><strong>Stable or Declining Coastal/Urban Core Tracts:</strong> Darker purple/blue tracts along the older coastal and central urban areas show slower growth or population declines, reflecting already built-out neighborhoods and shifts toward seasonal or vacation housing.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -217,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/Gabbybee5\.github\.io\/population-census\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
