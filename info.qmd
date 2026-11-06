@@ -1,0 +1,37 @@
+---
+title: "Information: Understanding the Data"
+subtitle: "What the Census Tract Population Numbers and Change Rates Mean"
+---
+
+## Data Source: American Community Survey (ACS)
+
+The data on this site comes from the **U.S. Census Bureau's 5-Year American Community Survey (ACS)**, retrieved using the `tidycensus` R package (variable `B01003_001`: *Total Population*).
+
+- **2020 Estimate (`pop_2020`):** Based on survey data collected over the 5-year period from **2016 to 2020**.
+- **2023 Estimate (`pop_2023`):** Based on survey data collected over the 5-year period from **2019 to 2023**.
+
+Because 5-year ACS estimates pool responses across five years, they provide reliable numbers even for small geographic areas with smaller populations.
+
+## What is a Census Tract?
+
+A **census tract** is a small, relatively permanent geographic subdivision of a county defined by the U.S. Census Bureau.
+
+- Tracts typically contain between **1,200 and 8,000 residents** (with an optimum size of about 4,000 people).
+- Geographically, tracts in densely populated urban or coastal areas are physically smaller, while tracts in rural eastern Manatee County cover much larger land areas.
+
+## How Population Change is Calculated
+
+For each census tract in Manatee County, we compare the 2020 and 2023 population estimates using two metrics:
+
+1. **Total Population Change (`pop_change`):**
+   $$\text{Population Change} = \text{Population}_{2023} - \text{Population}_{2020}$$
+   This tells us the raw number of residents gained or lost in a tract.
+
+2. **Percent Change Rate (`pct_change`):**
+   $$\text{Percent Change} = \left(\frac{\text{Population}_{2023} - \text{Population}_{2020}}{\text{Population}_{2020}}\right) \times 100$$
+   This shows how fast a tract grew or shrank relative to its starting size in 2020.
+
+## What the Patterns Tell Us About Manatee County
+
+- **High Growth in Suburban & Inland Corridors:** Tracts in communities like Parrish and Lakewood Ranch show large positive percentage changes because new residential developments brought thousands of new residents over a short window.
+- **Slight Declines or Stability Near the Coast:** Established neighborhoods in western Bradenton and the barrier islands have very little open land for new construction, and shifts toward vacation rentals or smaller household sizes can lower the year-round resident count.

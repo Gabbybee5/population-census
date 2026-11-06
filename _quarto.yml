@@ -2,20 +2,26 @@ project:
   type: website
 
 website:
-  title: "Population Changes Overtime"
+  title: "Population Changes Over Time"
   navbar:
+    background: primary
     left:
       - href: index.qmd
         text: Home
+      - href: compare.qmd
+        text: County Comparison
+      - href: info.qmd
+        text: Information
       - about.qmd
 
 format:
   html:
     theme:
-      - cosmo
+      - flatly
       - brand
     css: styles.css
     toc: true
+    smooth-scroll: true
 
 
 

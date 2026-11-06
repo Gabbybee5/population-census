@@ -1,0 +1,207 @@
+---
+title: "Regional Comparison: Manatee & Surrounding Counties"
+subtitle: "Comparing Population Growth (2020–2023) Across the Tampa Bay and Suncoast Region"
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(plotly)
+
+region_tracts <- read_rds("region_tracts.rds") |>
+  mutate(county = str_trim(county))
+
+county_summary <- region_tracts |>
+  summarize(
+    pop_2020 = sum(pop_2020, na.rm = TRUE),
+    pop_2023 = sum(pop_2023, na.rm = TRUE),
+    tracts = n(),
+    .by = county
+  ) |>
+  mutate(
+    pop_change = pop_2023 - pop_2020,
+    pct_change = (pop_2023 - pop_2020) / pop_2020 * 100,
+    is_manatee = ifelse(county == "Manatee", "Manatee County", "Surrounding County"),
+    hover_text = paste0(
+      "<b>", county, " County</b><br>",
+      "2020 Population: ", format(pop_2020, big.mark = ","), "<br>",
+      "2023 Population: ", format(pop_2023, big.mark = ","), "<br>",
+      "Total Change: ", ifelse(pop_change >= 0, "+", ""), format(pop_change, big.mark = ","),
+      " (", round(pct_change, 1), "%)"
+    )
+  )
+```
+
+## Overall County Growth Rate (2020 to 2023)
+
+How does Manatee County's overall growth compare to its neighbors? Hover over any bar below to see total population counts and net changes for Manatee, Sarasota, Hillsborough, Polk, Pinellas, Hardee, and DeSoto counties.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+bar_plot <- ggplot(
+  county_summary,
+  aes(
+    x = reorder(county, pct_change),
+    y = pct_change,
+    fill = is_manatee,
+    text = hover_text
+  )
+) +
+  geom_col(width = 0.65) +
+  coord_flip() +
+  scale_fill_manual(
+    values = c("Manatee County" = "#e6550d", "Surrounding County" = "#3182bd"),
+    name = ""
+  ) +
+  scale_y_continuous(labels = \(x) paste0(round(x, 1), "%")) +
+  labs(
+    title = "Total Population Change Rate by County (2020–2023)",
+    x = NULL,
+    y = "Population Change Rate (%)"
+  ) +
+  theme_minimal(base_size = 13)
+
+ggplotly(bar_plot, tooltip = "text")
+```
+
+## Compare Manatee Tracts to a Specific Neighboring County
+
+Select a county tab below to compare census tract population changes in **Manatee County** (orange) directly against a neighboring county (blue). You can also click county names in the legend on the right of any chart to toggle them on or off.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# Helper function to create an interactive comparison scatter plot
+make_comparison_plot <- \(target_county) {
+  comp_data <- region_tracts |>
+    filter(county %in% c("Manatee", target_county)) |>
+    mutate(
+       county_label = paste0(county, " County"),
+       hover_text = paste0(
+        "<b>", str_remove(NAME, "; Florida"), "</b><br>",
+        "2020 Population: ", format(pop_2020, big.mark = ","), "<br>",
+        "2023 Population: ", format(pop_2023, big.mark = ","), "<br>",
+        "Change: ", ifelse(pop_change >= 0, "+", ""), format(pop_change, big.mark = ","),
+        " (", round(pct_change, 1), "%)"
+      )
+    )
+
+  p <- ggplot(
+    comp_data,
+    aes(x = pop_2020, y = pct_change, color = county_label, text = hover_text)
+  ) +
+    geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
+    geom_point(size = 2.8, alpha = 0.8) +
+    scale_color_manual(
+      values = setNames(
+        c("#e6550d", "#3182bd"),
+        c("Manatee County", paste0(target_county, " County"))
+      ),
+      name = "County"
+    ) +
+    scale_x_continuous(labels = scales::label_comma()) +
+    scale_y_continuous(labels = \(x) paste0(round(x), "%")) +
+    labs(
+      title = paste0("Census Tract Growth Rate: Manatee vs. ", target_county, " County"),
+      x = "2020 Tract Population",
+      y = "Population Change Rate (2020 to 2023)"
+    ) +
+    theme_minimal(base_size = 13)
+
+  ggplotly(p, tooltip = "text")
+}
+```
+
+::: {.panel-tabset}
+
+### vs. Sarasota County
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+make_comparison_plot("Sarasota")
+```
+
+### vs. Hillsborough County
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+make_comparison_plot("Hillsborough")
+```
+
+### vs. Pinellas County
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+make_comparison_plot("Pinellas")
+```
+
+### vs. Polk County
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+make_comparison_plot("Polk")
+```
+
+### vs. Hardee & DeSoto
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+rural_data <- region_tracts |>
+  filter(county %in% c("Manatee", "Hardee", "DeSoto")) |>
+  mutate(
+    county_label = paste0(county, " County"),
+    hover_text = paste0(
+      "<b>", str_remove(NAME, "; Florida"), "</b><br>",
+      "2020 Population: ", format(pop_2020, big.mark = ","), "<br>",
+      "2023 Population: ", format(pop_2023, big.mark = ","), "<br>",
+      "Change: ", ifelse(pop_change >= 0, "+", ""), format(pop_change, big.mark = ","),
+      " (", round(pct_change, 1), "%)"
+    )
+  )
+
+p_rural <- ggplot(
+  rural_data,
+  aes(x = pop_2020, y = pct_change, color = county_label, text = hover_text)
+) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_point(size = 2.8, alpha = 0.85) +
+  scale_color_manual(
+    values = c(
+      "Manatee County" = "#e6550d",
+      "Hardee County" = "#3182bd",
+      "DeSoto County" = "#31a354"
+    ),
+    name = "County"
+  ) +
+  scale_x_continuous(labels = scales::label_comma()) +
+  scale_y_continuous(labels = \(x) paste0(round(x), "%")) +
+  labs(
+    title = "Census Tract Growth Rate: Manatee vs. Hardee & DeSoto Counties",
+    x = "2020 Tract Population",
+    y = "Population Change Rate (2020 to 2023)"
+  ) +
+  theme_minimal(base_size = 13)
+
+ggplotly(p_rural, tooltip = "text")
+```
+
+:::

@@ -1,8 +1,13 @@
 ---
-title: "Population Changes Over Time"
+title: "Manatee County Population Changes (2020–2023)"
+subtitle: "Exploring Census Tract Growth and Shifts Across Manatee County, Florida"
 ---
 
-This is the population change rate within Manatee County, FL.
+## Overview
+
+Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed.
+
+## Geographic Map of Population Change
 
 ```{r}
 #| echo: false
@@ -11,12 +16,23 @@ This is the population change rate within Manatee County, FL.
 
 library(tidyverse)
 library(sf)
+library(plotly)
 
 manatee_tracts <- read_rds("manatee_tracts.rds") |>
-  filter(!is.na(pct_change))
+  filter(!is.na(pct_change)) |>
+  # Create hover text showing tract name, populations, and change rate
+  mutate(
+    hover_text = paste0(
+      str_remove(NAME, "; Florida"), "<br>",
+      "2020 Population: ", format(pop_2020, big.mark = ","), "<br>",
+      "2023 Population: ", format(pop_2023, big.mark = ","), "<br>",
+      "Change: ", ifelse(pop_change >= 0, "+", ""), format(pop_change, big.mark = ","),
+      " (", round(pct_change, 1), "%)"
+    )
+  )
 
-ggplot(manatee_tracts) +
-  geom_sf(aes(fill = pct_change), color = "white", linewidth = 0.2) +
+p <- ggplot(manatee_tracts) +
+  geom_sf(aes(fill = pct_change, text = hover_text), color = "white", linewidth = 0.2) +
   scale_fill_viridis_c(
     option = "plasma",
     labels = \(x) paste0(round(x), "%"),
@@ -28,4 +44,43 @@ ggplot(manatee_tracts) +
     caption = "Source: U.S. Census Bureau, American Community Survey (B01003_001)"
   ) +
   theme_void()
+
+# Convert the ggplot map into an interactive plotly widget
+ggplotly(p, tooltip = "text") |>
+  style(hoveron = "fills")
 ```
+
+## 2020 vs. 2023 Population by Census Tract
+
+Each dot in the scatter plot below represents one census tract. The dashed diagonal line represents **zero change**—tracts above the line grew in population from 2020 to 2023, while tracts below the line decreased.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# Scatter plot comparing 2020 vs 2023 population for each tract
+scatter_plot <- ggplot(
+  manatee_tracts,
+  aes(x = pop_2020, y = pop_2023, color = pct_change, text = hover_text)
+) +
+  # Dashed 1:1 line showing where 2023 population equals 2020 population
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "gray50") +
+  geom_point(size = 3, alpha = 0.85) +
+  scale_color_viridis_c(
+    option = "plasma",
+    labels = \(x) paste0(round(x), "%"),
+    name = "Change (%)"
+  ) +
+  scale_x_continuous(labels = scales::label_comma()) +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(
+    title = "Census Tract Population: 2020 vs. 2023",
+    x = "2020 Population (5-Year ACS)",
+    y = "2023 Population (5-Year ACS)"
+  ) +
+  theme_minimal(base_size = 13)
+
+ggplotly(scatter_plot, tooltip = "text")
+```
+
