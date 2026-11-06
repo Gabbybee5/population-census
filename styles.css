@@ -1,36 +1,130 @@
-/* Custom styles for a clean, modern report look */
+/* Cohesive theme matching the Viridis 'Plasma' palette (deep indigo, magenta, warm amber) */
+:root {
+  --theme-indigo: #2d1b69;
+  --theme-purple: #6a1b9a;
+  --theme-magenta: #b83b5e;
+  --theme-amber: #f08a5d;
+  --theme-bg: #f6f5fa;
+  --theme-card: #ffffff;
+}
+
 body {
-  background-color: #f8f9fa;
-  color: #2c3e50;
-  line-height: 1.7;
+  background-color: var(--theme-bg);
+  color: #2b2d42;
+  line-height: 1.75;
+}
+
+/* Gradient Navbar matching the Plasma map scale */
+.navbar {
+  background: linear-gradient(120deg, #240b36 0%, #5c258d 55%, #b83b5e 100%) !important;
+  box-shadow: 0 3px 14px rgba(36, 11, 54, 0.22);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #ffd166 !important;
+}
+
+/* Page Title Banner */
+#title-block-header {
+  background: linear-gradient(135deg, rgba(92, 37, 141, 0.09) 0%, rgba(240, 138, 93, 0.12) 100%);
+  border-left: 5px solid var(--theme-magenta);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
 }
 
 h1.title {
-  font-weight: 700;
-  color: #1a252f;
-  margin-bottom: 0.25rem;
+  font-weight: 800;
+  color: var(--theme-indigo);
+  margin-bottom: 0.3rem;
 }
 
 p.subtitle {
-  color: #5a6a7e;
-  font-size: 1.15rem;
-  margin-bottom: 1.5rem;
+  color: #555b6e;
+  font-size: 1.1rem;
+  margin-bottom: 0;
 }
 
 h2 {
   margin-top: 2.2rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.45rem;
+  color: var(--theme-indigo);
+  border-bottom: 2px solid rgba(92, 37, 141, 0.18);
+  font-weight: 700;
+}
+
+h3 {
+  color: var(--theme-purple);
+  font-weight: 600;
+  margin-top: 1.4rem;
+}
+
+/* Summary KPI Stat Grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.stat-card {
+  background: var(--theme-card);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  border-top: 4px solid var(--theme-magenta);
+  box-shadow: 0 4px 14px rgba(45, 27, 105, 0.07);
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  background: linear-gradient(120deg, var(--theme-purple), var(--theme-magenta), #e6550d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #5c677d;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* Interactive Chart Cards */
+.cell-output-display {
+  background: var(--theme-card);
+  border: 1px solid rgba(92, 37, 141, 0.14);
+  border-radius: 14px;
+  padding: 1.15rem;
+  box-shadow: 0 6px 18px rgba(45, 27, 105, 0.07);
+  margin: 1.35rem 0;
+}
+
+/* Styled Tabset Pills for County Comparison */
+.panel-tabset .nav-tabs {
+  border-bottom: 2px solid rgba(92, 37, 141, 0.15);
+  gap: 0.4rem;
+}
+
+.panel-tabset .nav-link {
+  border-radius: 8px 8px 0 0;
+  color: var(--theme-indigo);
   font-weight: 600;
 }
 
-/* Give interactive charts a clean card container */
-.cell-output-display {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin: 1.25rem 0;
+.panel-tabset .nav-link.active {
+  background-color: var(--theme-purple) !important;
+  color: #ffffff !important;
+  border-color: var(--theme-purple) !important;
 }
-

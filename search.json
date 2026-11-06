@@ -2,35 +2,35 @@
   {
     "objectID": "info.html",
     "href": "info.html",
-    "title": "Information: Understanding the Data",
+    "title": "How We Track Population",
     "section": "",
     "text": "The data on this site comes from the U.S. Census Bureau’s 5-Year American Community Survey (ACS), retrieved using the tidycensus R package (variable B01003_001: Total Population).\n\n2020 Estimate (pop_2020): Based on survey data collected over the 5-year period from 2016 to 2020.\n2023 Estimate (pop_2023): Based on survey data collected over the 5-year period from 2019 to 2023.\n\nBecause 5-year ACS estimates pool responses across five years, they provide reliable numbers even for small geographic areas with smaller populations."
   },
   {
     "objectID": "info.html#data-source-american-community-survey-acs",
     "href": "info.html#data-source-american-community-survey-acs",
-    "title": "Information: Understanding the Data",
+    "title": "How We Track Population",
     "section": "",
     "text": "The data on this site comes from the U.S. Census Bureau’s 5-Year American Community Survey (ACS), retrieved using the tidycensus R package (variable B01003_001: Total Population).\n\n2020 Estimate (pop_2020): Based on survey data collected over the 5-year period from 2016 to 2020.\n2023 Estimate (pop_2023): Based on survey data collected over the 5-year period from 2019 to 2023.\n\nBecause 5-year ACS estimates pool responses across five years, they provide reliable numbers even for small geographic areas with smaller populations."
   },
   {
     "objectID": "info.html#what-is-a-census-tract",
     "href": "info.html#what-is-a-census-tract",
-    "title": "Information: Understanding the Data",
+    "title": "How We Track Population",
     "section": "What is a Census Tract?",
     "text": "What is a Census Tract?\nA census tract is a small, relatively permanent geographic subdivision of a county defined by the U.S. Census Bureau.\n\nTracts typically contain between 1,200 and 8,000 residents (with an optimum size of about 4,000 people).\nGeographically, tracts in densely populated urban or coastal areas are physically smaller, while tracts in rural eastern Manatee County cover much larger land areas."
   },
   {
     "objectID": "info.html#how-population-change-is-calculated",
     "href": "info.html#how-population-change-is-calculated",
-    "title": "Information: Understanding the Data",
+    "title": "How We Track Population",
     "section": "How Population Change is Calculated",
     "text": "How Population Change is Calculated\nFor each census tract in Manatee County, we compare the 2020 and 2023 population estimates using two metrics:\n\nTotal Population Change (pop_change): \\[\\text{Population Change} = \\text{Population}_{2023} - \\text{Population}_{2020}\\] This tells us the raw number of residents gained or lost in a tract.\nPercent Change Rate (pct_change): \\[\\text{Percent Change} = \\left(\\frac{\\text{Population}_{2023} - \\text{Population}_{2020}}{\\text{Population}_{2020}}\\right) \\times 100\\] This shows how fast a tract grew or shrank relative to its starting size in 2020."
   },
   {
     "objectID": "info.html#what-the-patterns-tell-us-about-manatee-county",
     "href": "info.html#what-the-patterns-tell-us-about-manatee-county",
-    "title": "Information: Understanding the Data",
+    "title": "How We Track Population",
     "section": "What the Patterns Tell Us About Manatee County",
     "text": "What the Patterns Tell Us About Manatee County\n\nHigh Growth in Suburban & Inland Corridors: Tracts in communities like Parrish and Lakewood Ranch show large positive percentage changes because new residential developments brought thousands of new residents over a short window.\nSlight Declines or Stability Near the Coast: Established neighborhoods in western Bradenton and the barrier islands have very little open land for new construction, and shifts toward vacation rentals or smaller household sizes can lower the year-round resident count."
   },
@@ -39,14 +39,14 @@
     "href": "index.html",
     "title": "Manatee County Population Changes (2020–2023)",
     "section": "",
-    "text": "Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed."
+    "text": "Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed.\n\n\n+8.5% Total County Population Growth\n\n\n+83.4% Fastest-Growing Census Tract\n\n\n93 Manatee Census Tracts Mapped"
   },
   {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
     "title": "Manatee County Population Changes (2020–2023)",
     "section": "",
-    "text": "Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed."
+    "text": "Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed.\n\n\n+8.5% Total County Population Growth\n\n\n+83.4% Fastest-Growing Census Tract\n\n\n93 Manatee Census Tracts Mapped"
   },
   {
     "objectID": "index.html#geographic-map-of-population-change",
@@ -65,14 +65,14 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Graph Information",
     "section": "",
     "text": "The map on the home page displays the population change rate (%) across census tracts in Manatee County, Florida between the 2016–2020 and 2019–2023 U.S. Census Bureau 5-Year American Community Survey (ACS) estimates (table B01003_001).\n\n\n\nFastest Growth in Eastern & Suburban Tracts: The brightest yellow/orange tracts—primarily inland and eastern areas such as Lakewood Ranch and Parrish—experienced rapid population growth, with the fastest-growing tract increasing by over 83%.\nCountywide Trend: Across all populated census tracts in Manatee County, the median tract grew by about 3.0% (with an average tract change of +4.5%) over this three-year window.\nStable or Declining Coastal/Urban Core Tracts: Darker purple/blue tracts along the older coastal and central urban areas show slower growth or population declines, reflecting already built-out neighborhoods and shifts toward seasonal or vacation housing."
   },
   {
     "objectID": "about.html#about-the-map",
     "href": "about.html#about-the-map",
-    "title": "About",
+    "title": "Graph Information",
     "section": "",
     "text": "The map on the home page displays the population change rate (%) across census tracts in Manatee County, Florida between the 2016–2020 and 2019–2023 U.S. Census Bureau 5-Year American Community Survey (ACS) estimates (table B01003_001).\n\n\n\nFastest Growth in Eastern & Suburban Tracts: The brightest yellow/orange tracts—primarily inland and eastern areas such as Lakewood Ranch and Parrish—experienced rapid population growth, with the fastest-growing tract increasing by over 83%.\nCountywide Trend: Across all populated census tracts in Manatee County, the median tract grew by about 3.0% (with an average tract change of +4.5%) over this three-year window.\nStable or Declining Coastal/Urban Core Tracts: Darker purple/blue tracts along the older coastal and central urban areas show slower growth or population declines, reflecting already built-out neighborhoods and shifts toward seasonal or vacation housing."
   },
