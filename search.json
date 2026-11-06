@@ -1,10 +1,66 @@
 [
   {
+    "objectID": "info.html",
+    "href": "info.html",
+    "title": "Information: Understanding the Data",
+    "section": "",
+    "text": "The data on this site comes from the U.S. Census Bureau’s 5-Year American Community Survey (ACS), retrieved using the tidycensus R package (variable B01003_001: Total Population).\n\n2020 Estimate (pop_2020): Based on survey data collected over the 5-year period from 2016 to 2020.\n2023 Estimate (pop_2023): Based on survey data collected over the 5-year period from 2019 to 2023.\n\nBecause 5-year ACS estimates pool responses across five years, they provide reliable numbers even for small geographic areas with smaller populations."
+  },
+  {
+    "objectID": "info.html#data-source-american-community-survey-acs",
+    "href": "info.html#data-source-american-community-survey-acs",
+    "title": "Information: Understanding the Data",
+    "section": "",
+    "text": "The data on this site comes from the U.S. Census Bureau’s 5-Year American Community Survey (ACS), retrieved using the tidycensus R package (variable B01003_001: Total Population).\n\n2020 Estimate (pop_2020): Based on survey data collected over the 5-year period from 2016 to 2020.\n2023 Estimate (pop_2023): Based on survey data collected over the 5-year period from 2019 to 2023.\n\nBecause 5-year ACS estimates pool responses across five years, they provide reliable numbers even for small geographic areas with smaller populations."
+  },
+  {
+    "objectID": "info.html#what-is-a-census-tract",
+    "href": "info.html#what-is-a-census-tract",
+    "title": "Information: Understanding the Data",
+    "section": "What is a Census Tract?",
+    "text": "What is a Census Tract?\nA census tract is a small, relatively permanent geographic subdivision of a county defined by the U.S. Census Bureau.\n\nTracts typically contain between 1,200 and 8,000 residents (with an optimum size of about 4,000 people).\nGeographically, tracts in densely populated urban or coastal areas are physically smaller, while tracts in rural eastern Manatee County cover much larger land areas."
+  },
+  {
+    "objectID": "info.html#how-population-change-is-calculated",
+    "href": "info.html#how-population-change-is-calculated",
+    "title": "Information: Understanding the Data",
+    "section": "How Population Change is Calculated",
+    "text": "How Population Change is Calculated\nFor each census tract in Manatee County, we compare the 2020 and 2023 population estimates using two metrics:\n\nTotal Population Change (pop_change): \\[\\text{Population Change} = \\text{Population}_{2023} - \\text{Population}_{2020}\\] This tells us the raw number of residents gained or lost in a tract.\nPercent Change Rate (pct_change): \\[\\text{Percent Change} = \\left(\\frac{\\text{Population}_{2023} - \\text{Population}_{2020}}{\\text{Population}_{2020}}\\right) \\times 100\\] This shows how fast a tract grew or shrank relative to its starting size in 2020."
+  },
+  {
+    "objectID": "info.html#what-the-patterns-tell-us-about-manatee-county",
+    "href": "info.html#what-the-patterns-tell-us-about-manatee-county",
+    "title": "Information: Understanding the Data",
+    "section": "What the Patterns Tell Us About Manatee County",
+    "text": "What the Patterns Tell Us About Manatee County\n\nHigh Growth in Suburban & Inland Corridors: Tracts in communities like Parrish and Lakewood Ranch show large positive percentage changes because new residential developments brought thousands of new residents over a short window.\nSlight Declines or Stability Near the Coast: Established neighborhoods in western Bradenton and the barrier islands have very little open land for new construction, and shifts toward vacation rentals or smaller household sizes can lower the year-round resident count."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Population Changes Over Time",
+    "title": "Manatee County Population Changes (2020–2023)",
     "section": "",
-    "text": "This is the population change rate within Manatee County, FL."
+    "text": "Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Manatee County Population Changes (2020–2023)",
+    "section": "",
+    "text": "Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed."
+  },
+  {
+    "objectID": "index.html#geographic-map-of-population-change",
+    "href": "index.html#geographic-map-of-population-change",
+    "title": "Manatee County Population Changes (2020–2023)",
+    "section": "Geographic Map of Population Change",
+    "text": "Geographic Map of Population Change"
+  },
+  {
+    "objectID": "index.html#vs.-2023-population-by-census-tract",
+    "href": "index.html#vs.-2023-population-by-census-tract",
+    "title": "Manatee County Population Changes (2020–2023)",
+    "section": "2020 vs. 2023 Population by Census Tract",
+    "text": "2020 vs. 2023 Population by Census Tract\nEach dot in the scatter plot below represents one census tract. The dashed diagonal line represents zero change—tracts above the line grew in population from 2020 to 2023, while tracts below the line decreased."
   },
   {
     "objectID": "about.html",
@@ -19,5 +75,26 @@
     "title": "About",
     "section": "",
     "text": "The map on the home page displays the population change rate (%) across census tracts in Manatee County, Florida between the 2016–2020 and 2019–2023 U.S. Census Bureau 5-Year American Community Survey (ACS) estimates (table B01003_001).\n\n\n\nFastest Growth in Eastern & Suburban Tracts: The brightest yellow/orange tracts—primarily inland and eastern areas such as Lakewood Ranch and Parrish—experienced rapid population growth, with the fastest-growing tract increasing by over 83%.\nCountywide Trend: Across all populated census tracts in Manatee County, the median tract grew by about 3.0% (with an average tract change of +4.5%) over this three-year window.\nStable or Declining Coastal/Urban Core Tracts: Darker purple/blue tracts along the older coastal and central urban areas show slower growth or population declines, reflecting already built-out neighborhoods and shifts toward seasonal or vacation housing."
+  },
+  {
+    "objectID": "compare.html",
+    "href": "compare.html",
+    "title": "Regional Comparison: Manatee & Surrounding Counties",
+    "section": "",
+    "text": "How does Manatee County’s overall growth compare to its neighbors? Hover over any bar below to see total population counts and net changes for Manatee, Sarasota, Hillsborough, Polk, Pinellas, Hardee, and DeSoto counties."
+  },
+  {
+    "objectID": "compare.html#overall-county-growth-rate-2020-to-2023",
+    "href": "compare.html#overall-county-growth-rate-2020-to-2023",
+    "title": "Regional Comparison: Manatee & Surrounding Counties",
+    "section": "",
+    "text": "How does Manatee County’s overall growth compare to its neighbors? Hover over any bar below to see total population counts and net changes for Manatee, Sarasota, Hillsborough, Polk, Pinellas, Hardee, and DeSoto counties."
+  },
+  {
+    "objectID": "compare.html#compare-manatee-tracts-to-a-specific-neighboring-county",
+    "href": "compare.html#compare-manatee-tracts-to-a-specific-neighboring-county",
+    "title": "Regional Comparison: Manatee & Surrounding Counties",
+    "section": "Compare Manatee Tracts to a Specific Neighboring County",
+    "text": "Compare Manatee Tracts to a Specific Neighboring County\nSelect a county tab below to compare census tract population changes in Manatee County (orange) directly against a neighboring county (blue). You can also click county names in the legend on the right of any chart to toggle them on or off.\n\nvs. Sarasota Countyvs. Hillsborough Countyvs. Pinellas Countyvs. Polk Countyvs. Hardee & DeSoto"
   }
 ]

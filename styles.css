@@ -1,1 +1,36 @@
-/* css styles */
+/* Custom styles for a clean, modern report look */
+body {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+h1.title {
+  font-weight: 700;
+  color: #1a252f;
+  margin-bottom: 0.25rem;
+}
+
+p.subtitle {
+  color: #5a6a7e;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: 600;
+}
+
+/* Give interactive charts a clean card container */
+.cell-output-display {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 1.25rem 0;
+}
+
