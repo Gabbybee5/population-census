@@ -1,5 +1,5 @@
 ---
-title: "Information: Understanding the Data"
+title: "How We Track Population"
 subtitle: "What the Census Tract Population Numbers and Change Rates Mean"
 ---
 

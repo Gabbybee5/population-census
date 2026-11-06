@@ -8,11 +8,12 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: about.qmd
+        text: Graph Information
       - href: compare.qmd
         text: County Comparison
       - href: info.qmd
-        text: Information
-      - about.qmd
+        text: How We Track Population
 
 format:
   html:

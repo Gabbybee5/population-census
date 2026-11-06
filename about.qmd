@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Graph Information"
 ---
 
 ## About the Map
