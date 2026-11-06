@@ -56,7 +56,7 @@ bar_plot <- ggplot(
   geom_col(width = 0.65) +
   coord_flip() +
   scale_fill_manual(
-    values = c("Manatee County" = "#e6550d", "Surrounding County" = "#3182bd"),
+    values = c("Manatee County" = "#d9480f", "Surrounding County" = "#5c258d"),
     name = ""
   ) +
   scale_y_continuous(labels = \(x) paste0(round(x, 1), "%")) +
@@ -102,7 +102,7 @@ make_comparison_plot <- \(target_county) {
     geom_point(size = 2.8, alpha = 0.8) +
     scale_color_manual(
       values = setNames(
-        c("#e6550d", "#3182bd"),
+        c("#d9480f", "#5c258d"),
         c("Manatee County", paste0(target_county, " County"))
       ),
       name = "County"
@@ -186,9 +186,9 @@ p_rural <- ggplot(
   geom_point(size = 2.8, alpha = 0.85) +
   scale_color_manual(
     values = c(
-      "Manatee County" = "#e6550d",
-      "Hardee County" = "#3182bd",
-      "DeSoto County" = "#31a354"
+      "Manatee County" = "#d9480f",
+      "Hardee County" = "#5c258d",
+      "DeSoto County" = "#b83b5e"
     ),
     name = "County"
   ) +

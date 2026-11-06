@@ -7,6 +7,21 @@ subtitle: "Exploring Census Tract Growth and Shifts Across Manatee County, Flori
 
 Between 2020 and 2023, Manatee County experienced rapid growth in several inland and suburban areas while some coastal and established tracts saw slight declines. Use the interactive map and scatter plot below to explore how individual census tracts changed.
 
+:::: {.stat-grid}
+::: {.stat-card}
+[+8.5%]{.stat-value}
+[Total County Population Growth]{.stat-label}
+:::
+::: {.stat-card}
+[+83.4%]{.stat-value}
+[Fastest-Growing Census Tract]{.stat-label}
+:::
+::: {.stat-card}
+[93]{.stat-value}
+[Manatee Census Tracts Mapped]{.stat-label}
+:::
+::::
+
 ## Geographic Map of Population Change
 
 ```{r}
